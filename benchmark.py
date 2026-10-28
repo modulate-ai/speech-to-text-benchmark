@@ -23,6 +23,7 @@ from engines import ENGINES
 from engines.base import EngineNotConfigured, FatalEngineError
 from scoring.normalize import normalize
 from scoring.wer import compute_wer
+from version import __version__
 
 ROOT = Path(__file__).parent
 DATASETS = ROOT / "datasets"
@@ -190,6 +191,7 @@ def plot(summaries):
 
 def main():
     p = argparse.ArgumentParser()
+    p.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     p.add_argument("--engine", nargs="+", choices=list(ENGINES), help="one or more engines")
     p.add_argument("--dataset", nargs="+", default=["all"], help="librispeech voxpopuli commonvoice, or all")
     p.add_argument("--num-files", type=int, default=20)
