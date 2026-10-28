@@ -93,6 +93,7 @@ python -m pytest
 | Flag | Meaning |
 |---|---|
 | `--engine` | one or more engine names, for example `velma deepgram` |
+| `--list-engines` | print registered engine names, local status and fixed prices, then exit |
 | `--dataset` | `librispeech`, `voxpopuli`, `commonvoice`, or `all` |
 | `--num-files` | files per dataset from the manifest (default 20) |
 | `--repeats` | calls per file, latency is averaged (default 3) |

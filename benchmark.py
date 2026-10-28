@@ -191,6 +191,7 @@ def plot(summaries):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--engine", nargs="+", choices=list(ENGINES), help="one or more engines")
+    p.add_argument("--list-engines", action="store_true", help="list available engines and their prices")
     p.add_argument("--dataset", nargs="+", default=["all"], help="librispeech voxpopuli commonvoice, or all")
     p.add_argument("--num-files", type=int, default=20)
     p.add_argument("--repeats", type=int, default=3, help="calls per file, latency is averaged")
@@ -198,6 +199,13 @@ def main():
                    help="override an engine's model, e.g. velma=multilingual")
     p.add_argument("--report", action="store_true", help="rebuild CSV, markdown and plots from results/session.json")
     a = p.parse_args()
+    if a.list_engines:
+        for name, engine_cls in ENGINES.items():
+            local = " (local)" if getattr(engine_cls, "local", False) else ""
+            price = getattr(engine_cls, "price_per_hour", None)
+            price = f"USD {price:g} per audio hour" if price is not None else "-"
+            print(f"{name}{local}: {price}")
+        return
     load_dotenv(ROOT / ".env")
     if a.report:
         return report()
