@@ -17,6 +17,7 @@ A reproducible comparison of nine speech-to-text engines on the same audio with 
 - [Results](#results)
 - [Text normalisation](#text-normalisation)
 - [Repository layout](#repository-layout)
+- [Changelog](CHANGELOG.md)
 - [Limitations](#limitations)
 
 ## Data
