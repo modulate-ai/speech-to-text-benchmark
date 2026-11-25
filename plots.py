@@ -29,6 +29,7 @@ PALETTE = {
     "velma": CORAL, "deepgram": "#1E96E8", "assemblyai": "#2F3D9A", "chirp_3": "#6FAE1F",
     "mai_transcribe_2": "#12A594", "moonshine_tiny": "#F0A020", "moonshine_base": "#F26B1D",
     "whisper_cpp_tiny": "#64748B", "whisper_cpp_base": "#8E4EC6", "whisper_hf": "#2E9E5B",
+    "oruk_fourier_2b": "#0F766E", "oruk_fourier_2b_local": "#14B8A6",
 }
 NAMES = {
     "velma": "Velma Fast", "deepgram": "Deepgram nova-3", "assemblyai": "AssemblyAI 3.5 Pro",
@@ -36,10 +37,12 @@ NAMES = {
     "moonshine_tiny": "Moonshine Tiny", "moonshine_base": "Moonshine Base",
     "whisper_cpp_tiny": "whisper.cpp tiny.en", "whisper_cpp_base": "whisper.cpp base.en",
     "whisper_hf": "Whisper large-v3 (HF)",
+    "oruk_fourier_2b": "Oruk Fourier 2B (API)", "oruk_fourier_2b_local": "Oruk Fourier 2B",
 }
-# Model files on disk for the local engines: Moonshine from the Hugging Face cache, whisper.cpp from its README
+# Model files on disk for the local engines: Moonshine and Oruk Fourier 2B from Hugging Face, whisper.cpp from its README
 MODEL_SIZE = {"moonshine_tiny": "105 MiB", "moonshine_base": "237 MiB",
-              "whisper_cpp_tiny": "75 MiB", "whisper_cpp_base": "142 MiB"}
+              "whisper_cpp_tiny": "75 MiB", "whisper_cpp_base": "142 MiB",
+              "oruk_fourier_2b_local": "3.81 GiB"}
 DATASET_NAMES = {"librispeech": "LibriSpeech", "voxpopuli": "VoxPopuli", "commonvoice": "Common Voice"}
 
 
