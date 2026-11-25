@@ -53,6 +53,8 @@ Velma, Deepgram and AssemblyAI are called 3 times per file and the latencies ave
 | Moonshine Base | `engines/moonshine_local.py` | `moonshine-ai/moonshine-base`, local | Transformers, CPU | 0 |
 | whisper.cpp tiny.en | `engines/whisper_cpp_local.py` | `ggml-tiny.en.bin`, local | `whisper-server`, Metal | 0 |
 | whisper.cpp base.en | `engines/whisper_cpp_local.py` | `ggml-base.en.bin`, local | `whisper-server`, Metal | 0 |
+| Oruk Fourier 2B (hosted) | `engines/oruk_fourier_2b.py` | `oruk-fourier-2b` via Oruk API | `language=en` | 0.48 ([pricing](https://oruk.ai/pricing)) |
+| Oruk Fourier 2B (local) | `engines/oruk_fourier_2b.py` | `oruk/oruk-fourier-2b`, local ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)) | Transformers >= 5.21, `language=en` | 0 |
 
 Hosted prices are pay-as-you-go batch rates from the vendors' pricing pages (October 2026). Local engines have no API charge; local compute is not counted.
 
@@ -208,6 +210,7 @@ Pairs with an empty reference are dropped, and an empty output counts as all del
 │   ├── deepgram.py
 │   ├── assemblyai.py
 │   ├── openrouter_stt.py      Chirp 3 and MAI-Transcribe 2 (hosted)
+│   ├── oruk_fourier_2b.py     Oruk Fourier 2B (hosted API and local HF)
 │   ├── whisper_hf.py          Whisper large-v3 via Hugging Face (hosted)
 │   ├── moonshine_local.py     Moonshine tiny and base (local)
 │   ├── whisper_cpp_local.py   whisper.cpp tiny.en and base.en (local)
